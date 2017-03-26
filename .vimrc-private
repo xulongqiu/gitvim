@@ -1,0 +1,180 @@
+" vundle 环境设置
+set rtp+=~/.vim/bundle/Vundle.vim
+" vundle 管理的插件列表必须位于 vundle#begin() 和 vundle#end() 之间
+" open any file with vim then input :PluginInstall or :PluginUpdate
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'tomasr/molokai'
+Plugin 'vim-scripts/phd'
+Plugin 'Lokaltog/vim-powerline'
+Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'derekwyatt/vim-fswitch'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'scrooloose/nerdtree'
+Plugin 'majutsushi/tagbar'
+Plugin 'fholgado/minibufexpl.vim'
+"Plugin 'kshenoy/vim-signature'
+"Plugin 'vim-scripts/BOOKMARKS--Mark-and-Highlight-Full-Lines'
+"Plugin 'vim-scripts/indexer.tar.gz'
+"Plugin 'vim-scripts/DfrankUtil'
+"Plugin 'vim-scripts/vimprj'
+"Plugin 'dyng/ctrlsf.vim'
+"Plugin 'terryma/vim-multiple-cursors'
+"Plugin 'scrooloose/nerdcommenter'
+"Plugin 'vim-scripts/DrawIt'
+"Plugin 'SirVer/ultisnips'
+"Plugin 'derekwyatt/vim-protodef'
+"Plugin 'gcmt/wildfire.vim'
+"Plugin 'sjl/gundo.vim'
+"Plugin 'Lokaltog/vim-easymotion'
+"Plugin 'suan/vim-instant-markdown'
+"Plugin 'lilydjwg/fcitx.vim'
+" 插件列表结束
+call vundle#end()
+
+" 定义快捷键的前缀
+let mapleader=";"
+
+" 开启文件类型侦测
+filetype on
+" 根据侦测到的不同类型加载对应的插件
+filetype plugin indent on
+
+" 定义快捷键
+
+" 定义快捷键到行尾和行首
+nmap LB 0
+nmap LE $
+
+" 设置快捷键将选中文本复制到系统剪贴板
+vnoremap <Leader>y "+y
+" 设置快捷键将系统剪贴板内容粘贴至vim
+nmap <Leader>p "+p
+
+
+" 让配置变更立即生效
+autocmd BufWritePost $MYVIMRC source $MYVIMRC
+
+" 开启实时搜索功能
+set incsearch
+" 搜索时大小写不敏感
+set ignorecase
+" 关闭兼容模式
+set nocompatible
+" vim 自身命令行模式智能补全
+set wildmenu
+set completeopt=longest,menu
+
+
+" 禁止光标闪烁
+set gcr=a:block-blinkon0
+" 禁止显示滚动条
+set guioptions-=l
+set guioptions-=L
+set guioptions-=r
+set guioptions-=R
+
+" 禁止显示菜单和工具条
+set guioptions-=m
+set guioptions-=T
+
+
+" 显示光标当前位置
+set ruler
+" 开启行号显示
+set number
+" 高亮显示当前行/列
+set cursorline
+set cursorcolumn
+" 高亮显示搜索结果
+set hlsearch
+
+
+" 禁止折行
+"set nowrap
+
+" 开启语法高亮
+syntax enable
+" 允许用指定语法高亮配色方案替换默认方案
+syntax on
+
+" 自适应不同语言的智能缩进
+filetype indent on
+" 将制表符扩展为空格
+set expandtab
+" 设置制表符编辑时占用空格数
+set tabstop=4
+" 设置格式化时制表符占用空格数
+set shiftwidth=4
+" 让vim 把连续数量的空格视为一个制表符
+set softtabstop=4
+
+" 折叠
+" 基于缩进或者语法进行代码折叠
+" set foldmethod=indent
+set foldmethod=syntax
+"启动vim时关闭折叠
+set nofoldenable
+
+" .h 和 .c 文件快速切换
+nmap <silent> <Leader>sw : FSHere<cr>
+
+
+"设定编码
+set enc=utf-8
+set fileencodings=ucs-bom,utf-8,chinese
+set langmenu=zh_CN.UTF-8
+language message zh_CN.UTF-8
+source $VIMRUNTIME/delmenu.vim
+source $VIMRUNTIME/menu.vim
+
+"自动补全命令时候使用菜单式匹配列表
+set wildmenu
+autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
+autocmd FileType java set omnifunc=javacomplete#Complet
+
+
+" --ctags setting--
+" 按下F5重新生成tags文件，并更新taglist
+map <F5> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q . <CR><CR>:!find `pwd` -name "*.[ch]" -o -name "*.cpp" > cscope.files; cscope -bRq<CR><CR> :TlistUpdate<CR>
+imap <F5> <ESC>:!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR><CR> :!fined `pwd` -name "*.[ch]" -o -name "*.cpp" > cscope.files; cscope -bRq<CR><CR> :TlistUpdate<CR>
+set tags=tags
+set tags+=./tags "add current directory's generated tags file
+set tags+=/work_source/linux_3.10.103/linux-3.10.103/tags "add new tags file
+
+" cscope
+source ~/gitvim/.vimcscope
+
+" minibuf
+source ~/gitvim/minibufexpl.vim/.vimrc
+
+" nerdtree
+source ~/gitvim/nerdtree/.vimrc
+
+" indent guides
+source ~/gitvim/vim-indent-guides/.vimrc
+
+"powerline
+source ~/gitvim/vim-powerline/.vimrc
+
+"ycm
+source ~/gitvim/YouCompleteMe/.vimrc
+
+" Astyle
+source ~/gitvim/.vimastyle
+
+" create file  header when new file
+source ~/gitvim/.vimwhennewfile
+
+" tagbar
+source ~/gitvim/tagbar/.vimrc
+
+" shortkey
+"source ~/.vimshortkey
