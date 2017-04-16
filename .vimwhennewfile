@@ -15,13 +15,13 @@ func! SetTitle()
         call append(line(".")+6, "")
     endif
     if &filetype == 'python'
-        call setline(1,"\#########################################################################")
-        call append(line("."), "\# File Name: ".expand("%"))
-        call append(line(".")+1, "\# Author: eric.xu")
-        call append(line(".")+2, "\# mail: eric.xu@libratone.com.cn")
-        call append(line(".")+3, "\# Created Time: ".strftime("%F %R:%S"))
-        call append(line(".")+4, "\#########################################################################")
-        call append(line(".")+5, "\#!/usr/bin/python3.5")
+        call setline(1,"\#!/usr/bin/python3.5")
+        call append(line("."),"\#########################################################################")
+        call append(line(".")+1, "\# File Name: ".expand("%"))
+        call append(line(".")+2, "\# Author: eric.xu")
+        call append(line(".")+3, "\# mail: eric.xu@libratone.com.cn")
+        call append(line(".")+4, "\# Created Time: ".strftime("%F %R:%S"))
+        call append(line(".")+5, "\#########################################################################")
         call append(line(".")+6, "")
     endif
     if &filetype == 'cpp'
