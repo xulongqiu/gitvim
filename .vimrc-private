@@ -180,6 +180,10 @@ source ~/gitvim/.vimwhennewfile
 " tagbar
 source ~/gitvim/tagbar/.vimrc
 
+" taglist
+source ~/gitvim/taglist/.vimrc
+
+
 " shortkey
 "source ~/.vimshortkey
 "
