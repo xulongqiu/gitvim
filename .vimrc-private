@@ -94,7 +94,8 @@ set cursorline
 set cursorcolumn
 " 高亮显示搜索结果
 set hlsearch
-
+" viminfo
+set viminfo='1000,f1,<500
 
 " 禁止折行
 "set nowrap
@@ -152,6 +153,9 @@ imap <F5> <ESC>:!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR><CR> :!fi
 set tags=tags
 set tags+=./tags "add current directory's generated tags file
 set tags+=/work_source/linux_3.10.103/linux-3.10.103/tags "add new tags file
+set tags+=/work_source/android_av/external_flac/tags
+set tags+=/work_source/android_av/mp3lame/tags
+set tags+=/work_source/android_av/mp3shine/tags
 
 " cscope
 source ~/gitvim/.vimcscope
