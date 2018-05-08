@@ -1,5 +1,11 @@
 " vundle 环境设置
-set rtp+=~/.vim/bundle/Vundle.vim
+" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+set nocompatible
+filetype off
+  set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#rc()
+
 " vundle 管理的插件列表必须位于 vundle#begin() 和 vundle#end() 之间
 " open any file with vim then input :PluginInstall or :PluginUpdate
 call vundle#begin()
@@ -151,11 +157,15 @@ autocmd FileType java set omnifunc=javacomplete#Complet
 map <F5> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q . <CR><CR>:!find `pwd` -name "*.[ch]" -o -name "*.cpp" > cscope.files; cscope -bRq<CR><CR> :TlistUpdate<CR>
 imap <F5> <ESC>:!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR><CR> :!fined `pwd` -name "*.[ch]" -o -name "*.cpp" > cscope.files; cscope -bRq<CR><CR> :TlistUpdate<CR>
 set tags=tags
-set tags+=./tags "add current directory's generated tags file
-set tags+=/work_source/linux_3.10.103/linux-3.10.103/tags "add new tags file
-set tags+=/work_source/android_av/external_flac/tags
-set tags+=/work_source/android_av/mp3lame/tags
-set tags+=/work_source/android_av/mp3shine/tags
+if filereadable("./tags")
+    set tags+=./tags "add current directory's generated tags file
+endif
+if filereadable("../tags")
+    set tags+=./tags
+endif
+if filereadable("../../tags")
+    set tags+=./tags
+endif
 
 " cscope
 source ~/gitvim/.vimcscope
