@@ -1,0 +1,16 @@
+" --ctags setting--
+" 按下F5重新生成tags文件，并更新taglist
+map <F5> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q . <CR><CR>:!find `pwd` -name "*.[ch]" -o -name "*.cpp" > cscope.files; cscope -bRq<CR><CR> :TlistUpdate<CR>
+imap <F5> <ESC>:!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR><CR> :!fined `pwd` -name "*.[ch]" -o -name "*.cpp" > cscope.files; cscope -bRq<CR><CR> :TlistUpdate<CR>
+set tags=tags
+if filereadable("./tags")
+    set tags+=./tags "add current directory's generated tags file
+endif
+if filereadable("../tags")
+    set tags+=./tags
+endif
+if filereadable("../../tags")
+    set tags+=./tags
+endif
+
+
