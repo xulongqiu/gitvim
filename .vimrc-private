@@ -1,31 +1,35 @@
-" vundle 环境设置
-" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-
 set nocompatible
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#rc()
 
-" vundle 管理的插件列表必须位于 vundle#begin() 和 vundle#end() 之间
-" open any file with vim then input :PluginInstall or :PluginUpdate
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'tomasr/molokai'
-Plugin 'vim-scripts/phd'
-Plugin 'Lokaltog/vim-powerline'
-Plugin 'octol/vim-cpp-enhanced-highlight'
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'derekwyatt/vim-fswitch'
-Plugin 'scrooloose/nerdtree'
-Plugin 'majutsushi/tagbar'
-Plugin 'fholgado/minibufexpl.vim'
-Plugin 'iamcco/markdown-preview.vim'
-Plugin 'godlygeek/tabular'
-Plugin 'iamcco/mathjax-support-for-mkdp'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'vim-scripts/DoxygenToolkit.vim'
+let $PLUG_DIR = expand("~/.vim/bundle")
+
+if empty(glob(expand("$PLUG_DIR/plug.vim")))
+    silent !curl -fLo $PLUG_DIR/plug.vim --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source ~/.vimrc
+endif
+source $PLUG_DIR/plug.vim
+
+" open any file with vim then input :PlugInstall or :PlugUpdate
+call plug#begin($PLUG_DIR)
+Plug 'altercation/vim-colors-solarized'
+Plug 'tomasr/molokai'
+Plug 'vim-scripts/phd'
+Plug 'Lokaltog/powerline'
+Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'derekwyatt/vim-fswitch'
+Plug 'scrooloose/nerdtree'
+Plug 'majutsushi/tagbar'
+Plug 'fholgado/minibufexpl.vim'
+Plug 'iamcco/markdown-preview.vim'
+Plug 'godlygeek/tabular'
+Plug 'iamcco/mathjax-support-for-mkdp'
+Plug 'plasticboy/vim-markdown'
+" Plug 'Valloric/YouCompleteMe'
+Plug 'vim-scripts/DoxygenToolkit.vim'
+Plug 'zxqfl/tabnine-vim'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 "Plugin 'kshenoy/vim-signature'
 "Plugin 'vim-scripts/BOOKMARKS--Mark-and-Highlight-Full-Lines'
 "Plugin 'vim-scripts/indexer.tar.gz'
@@ -43,7 +47,7 @@ Plugin 'vim-scripts/DoxygenToolkit.vim'
 "Plugin 'suan/vim-instant-markdown'
 "Plugin 'lilydjwg/fcitx.vim'
 " 插件列表结束
-call vundle#end()
+call plug#end()
 
 " 定义快捷键的前缀
 let mapleader=";"
@@ -157,10 +161,10 @@ source ~/gitvim/nerdtree/.vimrc
 source ~/gitvim/vim-indent-guides/.vimrc
 
 "powerline
-source ~/gitvim/vim-powerline/.vimrc
+source ~/gitvim/powerline/.vimrc
 
 "ycm
-source ~/gitvim/YouCompleteMe/.vimrc
+"source ~/gitvim/YouCompleteMe/.vimrc
 
 " Astyle
 source ~/gitvim/.vimastyle
@@ -181,3 +185,6 @@ source ~/gitvim/DoxygenToolkit.vim/.vimrc
 "source ~/.vimshortkey
 "
 source ~/gitvim/markdown-preview.vim/.vimrc
+
+" UltiSips
+source ~/gitvim/.vimultisnips
