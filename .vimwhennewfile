@@ -44,7 +44,7 @@ func! SetTitle()
     endif
     if &filetype == 'c'
         call setline(1, "#define LOG_NDEBUG 0")
-        call append(line("."), "#define LOG_TAG ")
+        call append(line("."), "#define LOG_TAG")
         call append(line(".")+1, "")
         call append(line(".")+2, "#include <stdio.h>")
         call append(line(".")+3, "#include <stdlib.h>")

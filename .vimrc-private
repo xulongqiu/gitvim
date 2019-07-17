@@ -112,6 +112,27 @@ set nofoldenable
 nmap <silent> <Leader>sw : FSHere<cr>
 
 
+"删除多余空格"
+fun RemoveUnwantedSpace()
+	let l:winview = winsaveview()
+	silent! %s/\s\+$//
+	call winrestview(l:winview)
+endfun
+if has("autocmd")
+  au BufWritePre,FileAppendPre,FileWritePre,FilterWritePre * :call RemoveUnwantedSpace()
+endif
+
+"回到上次编辑的位置
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
+
+"高亮行尾多余空格
+highlight ExtraWhitespace ctermbg=red guibg=darkgreen
+autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$\| \+\ze\t/
+
+
 "设定编码
 set enc=utf-8
 set fileencodings=ucs-bom,utf-8,chinese

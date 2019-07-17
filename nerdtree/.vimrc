@@ -1,7 +1,7 @@
 " 使用 NERDTree 插件查看工程文件。设置快捷键，速记：file list
 nmap <Leader>fl :NERDTreeToggle<CR>
 " 设置NERDTree子窗口宽度
-let NERDTreeWinSize=32
+let NERDTreeWinSize=48
 " 设置NERDTree子窗口位置
 let NERDTreeWinPos="right"
 " 显示隐藏文件

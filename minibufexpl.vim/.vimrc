@@ -4,13 +4,14 @@
 map <Leader>mt :MBEToggle<cr>
 " buffer 切换快捷键
 map <Leader>mf :MBEFocus<cr>
+map <Leader>mc :MBEClose<cr>
 "map <Leader>mn :MBEbn<cr>
 "map <Leader>mp :MBEbp<cr>
 
-let g:miniBufExplMapWindowNavVim = 1   
-let g:miniBufExplMapWindowNavArrows = 1   
-let g:miniBufExplMapCTabSwitchBufs = 1   
-let g:miniBufExplModSelTarget = 1  
+let g:miniBufExplMapWindowNavVim = 1
+let g:miniBufExplMapWindowNavArrows = 1
+let g:miniBufExplMapCTabSwitchBufs = 1
+let g:miniBufExplModSelTarget = 1
 let g:miniBufExplMoreThanOne=0
 
 map <F10> :MBEbp<CR>
