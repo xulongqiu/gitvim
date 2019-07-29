@@ -14,7 +14,8 @@ call plug#begin($PLUG_DIR)
 Plug 'altercation/vim-colors-solarized'
 Plug 'tomasr/molokai'
 Plug 'vim-scripts/phd'
-Plug 'Lokaltog/powerline'
+Plug 'Lokaltog/vim-powerline'
+"Plug 'vim-airline/vim-airline'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'derekwyatt/vim-fswitch'
@@ -25,7 +26,7 @@ Plug 'iamcco/markdown-preview.vim'
 Plug 'godlygeek/tabular'
 Plug 'iamcco/mathjax-support-for-mkdp'
 Plug 'plasticboy/vim-markdown'
-" Plug 'Valloric/YouCompleteMe'
+"Plug 'Valloric/YouCompleteMe'
 Plug 'vim-scripts/DoxygenToolkit.vim'
 Plug 'zxqfl/tabnine-vim'
 Plug 'SirVer/ultisnips'
@@ -161,10 +162,10 @@ source ~/gitvim/nerdtree/.vimrc
 source ~/gitvim/vim-indent-guides/.vimrc
 
 "powerline
-source ~/gitvim/powerline/.vimrc
+source ~/gitvim/vim-powerline/.vimrc
 
 "ycm
-"source ~/gitvim/YouCompleteMe/.vimrc
+" source ~/gitvim/YouCompleteMe/.vimrc
 
 " Astyle
 source ~/gitvim/.vimastyle
