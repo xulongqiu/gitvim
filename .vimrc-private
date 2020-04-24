@@ -31,6 +31,9 @@ Plug 'vim-scripts/DoxygenToolkit.vim'
 Plug 'zxqfl/tabnine-vim'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+"Plug 'ludovicchabant/vim-gutentags'
+"Plug 'skywind3000/gutentags_plus'
+"Plug 'skywind3000/vim-preview'
 "Plugin 'kshenoy/vim-signature'
 "Plugin 'vim-scripts/BOOKMARKS--Mark-and-Highlight-Full-Lines'
 "Plugin 'vim-scripts/indexer.tar.gz'
@@ -146,8 +149,11 @@ set langmenu=zh_CN.UTF-8
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
 
-"ctags
+" ctags
 source ~/gitvim/.vimctags
+
+" gtags
+" source ~/gitvim/.vimgtags
 
 " cscope
 source ~/gitvim/.vimcscope
@@ -189,3 +195,9 @@ source ~/gitvim/markdown-preview.vim/.vimrc
 
 " UltiSips
 source ~/gitvim/.vimultisnips
+
+" gutentags
+" source ~/gitvim/.vimgutentags
+
+" vim-preview
+" source ~/gitvim/.vimpreview
