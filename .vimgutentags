@@ -49,4 +49,5 @@ nmap <C-@>i :GscopeFind i <C-R>=expand("<cfile>")<cr><cr>
 nmap <C-@>d :GscopeFind d <C-R><C-W><cr>
 nmap <C-@>a :GscopeFind a <C-R><C-W><cr>
 nmap <C-@>z :GscopeFind z <C-R><C-W><cr>
-nmap <C-@>q :cclose<CR>
+nmap q :cclose<CR>
+

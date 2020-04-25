@@ -31,9 +31,15 @@ Plug 'vim-scripts/DoxygenToolkit.vim'
 Plug 'zxqfl/tabnine-vim'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-"Plug 'ludovicchabant/vim-gutentags'
-"Plug 'skywind3000/gutentags_plus'
-"Plug 'skywind3000/vim-preview'
+Plug 'dense-analysis/ale'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'skywind3000/gutentags_plus'
+Plug 'skywind3000/vim-preview'
+if has('nvim') || has('patch-8.0.902')
+    Plug 'mhinz/vim-signify'
+else
+    Plug 'mhinz/vim-signify', { 'branch': 'legacy' }
+endif
 "Plugin 'kshenoy/vim-signature'
 "Plugin 'vim-scripts/BOOKMARKS--Mark-and-Highlight-Full-Lines'
 "Plugin 'vim-scripts/indexer.tar.gz'
@@ -150,13 +156,13 @@ source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
 
 " ctags
-source ~/gitvim/.vimctags
-
-" gtags
-" source ~/gitvim/.vimgtags
+" source ~/gitvim/.vimctags
 
 " cscope
-source ~/gitvim/.vimcscope
+" source ~/gitvim/.vimcscope
+
+" gtags
+source ~/gitvim/.vimgtags
 
 " minibuf
 source ~/gitvim/minibufexpl.vim/.vimrc
@@ -197,7 +203,10 @@ source ~/gitvim/markdown-preview.vim/.vimrc
 source ~/gitvim/.vimultisnips
 
 " gutentags
-" source ~/gitvim/.vimgutentags
+source ~/gitvim/.vimgutentags
 
 " vim-preview
-" source ~/gitvim/.vimpreview
+source ~/gitvim/.vimpreview
+
+" vimale
+source ~/gitvim/.vimale
