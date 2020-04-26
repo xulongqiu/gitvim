@@ -40,6 +40,7 @@ if has('nvim') || has('patch-8.0.902')
 else
     Plug 'mhinz/vim-signify', { 'branch': 'legacy' }
 endif
+Plug 'ryanoasis/vim-devicons'
 "Plugin 'kshenoy/vim-signature'
 "Plugin 'vim-scripts/BOOKMARKS--Mark-and-Highlight-Full-Lines'
 "Plugin 'vim-scripts/indexer.tar.gz'
