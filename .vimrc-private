@@ -1,4 +1,5 @@
 set nocompatible
+set backspace=indent,eol,start
 
 let $PLUG_DIR = expand("~/.vim/bundle")
 
@@ -14,8 +15,8 @@ call plug#begin($PLUG_DIR)
 Plug 'altercation/vim-colors-solarized'
 Plug 'tomasr/molokai'
 Plug 'vim-scripts/phd'
-Plug 'Lokaltog/vim-powerline'
-"Plug 'vim-airline/vim-airline'
+"Plug 'Lokaltog/vim-powerline'
+Plug 'vim-airline/vim-airline'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'derekwyatt/vim-fswitch'
