@@ -9,17 +9,23 @@ let g:airline#extensions#ale#enabled = 1
 
 let g:ale_c_gcc_options = '-Wall -O2 -std=c99'
 let g:ale_cpp_gcc_options = '-Wall -O2 -std=c++14'
-let g:ale_c_cppcheck_options = ''
-let g:ale_cpp_cppcheck_options = ''
+let g:ale_c_cppcheck_options = '--enable=all --inconclusive --std=posix'
+let g:ale_cpp_cppcheck_options = '--enable=all --inconclusive --std=posix'
+let g:ale_cpp_cpplint_options = '--verbose=5'
 
 let g:ale_sign_error = 'e'
 let g:ale_sign_warning = 'w'
 
 let g:ale_linters = {
-\   'c++': ['g++', 'cppcheck'],
-\   'cpp': ['g++', 'cppcheck'],
+\   'c++': ['cppcheck', 'cpplint'],
+\   'cpp': ['cppcheck', 'cpplint'],
 \   'c': ['gcc'],
 \   'python': ['pylint'],
+\}
+
+let g:ale_fixers = {
+\   'cpp': ['remove_trailing_lines','trim_whitespace' ],
+\   'python': ['autopep8']
 \}
 
 hi! clear SpellBad
