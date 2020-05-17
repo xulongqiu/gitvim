@@ -1,0 +1,5 @@
+"let g:asynctasks_rtp_config = get(g:, 'asynctasks_rtp_config', 'tasks.ini')
+let g:asyncrun_open = 6
+
+noremap <silent><F8> :AsyncTask file-build<cr>
+noremap <silent><F9> :AsyncTask file-run<cr>

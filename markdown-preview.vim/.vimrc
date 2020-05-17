@@ -22,7 +22,7 @@ let g:mkdp_command_for_global = 0
 " set to 1, the MarkdownPreview command can be use for all files,
 " by default it just can be use in markdown file
 
-nmap <silent> <F8> <Plug>MarkdownPreview        " for normal mode
-imap <silent> <F8> <Plug>MarkdownPreview        " for insert mode
-nmap <silent> <F9> <Plug>StopMarkdownPreview    " for normal mode
-imap <silent> <F9> <Plug>StopMarkdownPreview    " for insert mode
+nmap <C-v>m <Plug>MarkdownPreview        " for normal mode
+imap <C-v>m <Plug>MarkdownPreview        " for insert mode
+nmap <C-e>m <Plug>StopMarkdownPreview    " for normal mode
+imap <C-e>m <Plug>StopMarkdownPreview    " for insert mode

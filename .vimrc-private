@@ -42,6 +42,8 @@ else
     Plug 'mhinz/vim-signify', { 'branch': 'legacy' }
 endif
 Plug 'ryanoasis/vim-devicons'
+Plug 'skywind3000/asynctasks.vim'
+Plug 'skywind3000/asyncrun.vim'
 "Plugin 'kshenoy/vim-signature'
 "Plugin 'vim-scripts/BOOKMARKS--Mark-and-Highlight-Full-Lines'
 "Plugin 'vim-scripts/indexer.tar.gz'
@@ -212,3 +214,6 @@ source ~/gitvim/.vimpreview
 
 " vimale
 source ~/gitvim/.vimale
+
+" asynctasks
+source ~/gitvim/.vimasynctasks
