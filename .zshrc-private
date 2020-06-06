@@ -2,6 +2,7 @@ export S12_TOOL=/home/eric/bin/arc-4.8-amlogic-20130904-r2/bin/:/home/eric/bin/g
 export NDK_HOME=~/tools/android-ndk-r17b
 PATH=$S12_TOOL:$PATH:$NDK_HOME
 export ANDROID_HOME=~/Android/Sdk
+export REPO_URL='https://mirrors.tuna.tsinghua.edu.cn/git/git-repo/'
 
 # install zplug, plugin manager for zsh, https://github.com/zplug/zplug
 # curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
