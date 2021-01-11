@@ -1,6 +1,7 @@
 " config project root markers.
 let g:gutentags_project_root = ['.root', '.svn', '.git', '.hg', '.project']
-
+" advanced commands, :GutentagsToggleTrace
+" let g:gutentags_define_advanced_commands = 1
 " tags file name
 let g:gutentags_ctags_tagfile = '.tags'
 
