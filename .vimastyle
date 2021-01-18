@@ -7,12 +7,12 @@ func! CodeFormat()
     "C源程序
     if &filetype == 'c'
         "执行调用外部程序的命令
-        exec "%!astyle --style=google --indent=spaces=4 -Xc80 -f -k1 -j -p -U -H -c -w -n -X -c"
+        exec "%!astyle --style=google --indent=spaces=4 -M80 -f -k1 -j -p -U -H -c -w -n -X -c"
         "exec "e! %"
     "H头文件(文件类型识别为cpp)，CPP源程序
     elseif &filetype == 'cpp'
     "执行调用外部程序的命令
-        exec "%!astyle --style=google --indent=spaces=4 -Xc80 -f -k1 -j -p -U -H -c -w -n -X -c"
+        exec "%!astyle --style=google --indent=spaces=4 -M80 -f -k1 -j -p -U -H -c -w -n -X -c"
         "exec "e! %"
     "JAVA源程序
     elseif &filetype == 'java'
